@@ -1,5 +1,7 @@
 //by Graham Clifford
 
+//Credit to Joop Brokking for my MPU6050 code. www.brokking.net/
+
 //initializing libraries
 #include "I2Cdev.h"
 #include "MPU6050_6Axis_MotionApps20.h"
@@ -158,7 +160,7 @@ void transmitString(String s) {
   }
 }
 
-/*void pidInit(int j, ArduPID pid, int k) {
+void pidInit(int j, ArduPID pid, int k) {
   if (k == 0) {
     pid.begin(&_ypr[j], &thrust_mod, &ypr_setpoint[j], p, i, d);
     pid.setOutputLimits(0, 255);
@@ -175,7 +177,7 @@ void transmitString(String s) {
     pid.setSampleTime(20);
     pid.start();
   }
-  }*/
+}
 
 void setup() {
   Serial.begin(19200);
